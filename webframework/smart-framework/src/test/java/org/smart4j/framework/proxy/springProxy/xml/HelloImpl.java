@@ -4,7 +4,7 @@ package org.smart4j.framework.proxy.springProxy.xml;
  * 实现类
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-20
+ * @date 2017-08-20
  */
 public class HelloImpl implements Hello {
 

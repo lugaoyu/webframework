@@ -7,8 +7,9 @@ import org.apache.commons.collections4.*;
 
 /**
  * 集合工具类
- * 
- * @author Administrator 2017/7/18
+ * @author lugaoyu
+ * @since 1.0.0
+ * @date 2017-07-18
  */
 public final class CollectionUtil {
 	/**

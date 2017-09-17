@@ -12,7 +12,7 @@ import org.smart4j.framework.helper.DatabaseHelper;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-13
+ * @date 2017-08-13
  */
 public class TransactionProxy implements Proxy {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TransactionProxy.class);

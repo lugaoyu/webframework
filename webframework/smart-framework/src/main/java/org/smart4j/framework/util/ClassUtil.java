@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-03
+ * @date 2017-08-03
  */
 public final class ClassUtil {
 	private static final Logger LOGGER = LoggerFactory

@@ -11,7 +11,7 @@ import org.smart4j.framework.proxy.staticProxy.Hello;
  * jdk动态生成目标代理类 拦截类(不是拦截某个方法)
  * @author lugaoyu
  * @since    1.0.0
- * @data      2017-09-17
+ * @date      2017-09-17
  */
 public final class HelloProxy extends Proxy implements Hello {
 	private static final long serialVersionUID = 1L;

@@ -10,7 +10,7 @@ import net.sf.cglib.proxy.MethodProxy;
  * AOP测试代码（cglib 动态代理）
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-18
+ * @date 2017-08-18
  */
 public class CGLibDynamicProxy implements MethodInterceptor {
 

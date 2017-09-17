@@ -5,13 +5,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Spring AOP 声明式配置
- * 客户端(拦定特定方法)
+ * 客户端(拦定特定方法)(切面类--增强+切点)
  * @author lugaoyu
  * @since 1.0.0
  * @data 2017-08-20
  */
 public class Main1 {
 	public static void main(String[] args){
+		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("/spring1.xml");
 		Hello helloProxy = (Hello) context.getBean("helloProxy");
 		helloProxy.say("lugaoyu");

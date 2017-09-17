@@ -10,7 +10,7 @@ import org.smart4j.framework.util.CollectionUtil;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-08
+ * @date 2017-08-08
  */
 public class Param {
 	private Map<String,Object> paramMap;

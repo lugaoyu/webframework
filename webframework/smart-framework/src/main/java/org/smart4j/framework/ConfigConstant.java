@@ -5,7 +5,7 @@ package org.smart4j.framework;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-07-31
+ * @date 2017-07-31
  */
 public interface ConfigConstant {
 	String CONFIG_FILE = "smart.properties";

@@ -8,7 +8,7 @@ import org.springframework.aop.MethodBeforeAdvice;
  * Spring AOP 前置增强
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-19
+ * @date 2017-08-19
  */
 public class HelloBeforeAdvice implements MethodBeforeAdvice {
 

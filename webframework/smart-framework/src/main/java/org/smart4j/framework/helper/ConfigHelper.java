@@ -10,7 +10,7 @@ import org.smart4j.framework.util.PropsUtil;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-07-31
+ * @date 2017-07-31
  */
 public class ConfigHelper {
 	private static final Properties CONFIG_PROPS = PropsUtil

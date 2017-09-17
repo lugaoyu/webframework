@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-07
+ * @date 2017-08-07
  */
 public class ReflectionUtil {
 	private static final Logger LOGGER = LoggerFactory

@@ -9,7 +9,7 @@ import sun.misc.ProxyGenerator;
  * jdk动态代理 动态生成Java类
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-18
+ * @date 2017-08-18
  */
 @SuppressWarnings("restriction")
 public class ProxyUtils {

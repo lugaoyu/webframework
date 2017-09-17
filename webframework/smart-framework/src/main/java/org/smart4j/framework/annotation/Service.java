@@ -5,7 +5,7 @@ package org.smart4j.framework.annotation;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-07
+ * @date 2017-08-07
  */
 public @interface Service {
 	

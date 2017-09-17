@@ -5,7 +5,7 @@ package org.smart4j.framework.proxy.staticProxy;
  * 客户端
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-15
+ * @date 2017-08-15
  */
 public class Main {
 	public static void main(String[] args){

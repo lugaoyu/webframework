@@ -5,7 +5,7 @@ package org.smart4j.framework.proxy.cglibProxy;
  * 接口
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-15
+ * @date 2017-08-15
  */
 public interface Hello {
 	void say(String name);

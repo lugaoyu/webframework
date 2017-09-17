@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-08
+ * @date 2017-08-08
  */
 public final class JsonUtil {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JsonUtil.class);

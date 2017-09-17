@@ -7,7 +7,7 @@ import java.io.InputStream;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-22
+ * @date 2017-08-22
  */
 public class FileParam {
 	private String fieldName;  //文件表单字段名

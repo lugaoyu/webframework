@@ -5,7 +5,7 @@ package org.smart4j.framework.bean;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-22
+ * @date 2017-08-22
  */
 public class FormParam {
 	private String fieldName;

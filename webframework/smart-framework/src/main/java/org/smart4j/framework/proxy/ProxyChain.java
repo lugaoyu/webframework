@@ -11,7 +11,7 @@ import net.sf.cglib.proxy.MethodProxy;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-10
+ * @date 2017-08-10
  */
 public class ProxyChain {
 	private final Class<?> targetClass; // 目标类

@@ -13,7 +13,7 @@ import org.smart4j.framework.util.ClassUtil;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-07
+ * @date 2017-08-07
  */
 public final class ClassHelper {
 	private static final Set<Class<?>> CLASS_SET;

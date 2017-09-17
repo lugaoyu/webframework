@@ -7,7 +7,7 @@ import org.springframework.aop.framework.ProxyFactory;
  * Spring AOP 客户端(编程式)
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-19
+ * @date 2017-08-19
  */
 public class Main {
 	public static void main(String[] args){

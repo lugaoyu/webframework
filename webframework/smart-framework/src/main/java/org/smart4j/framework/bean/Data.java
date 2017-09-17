@@ -5,7 +5,7 @@ package org.smart4j.framework.bean;
  * 
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-08
+ * @date 2017-08-08
  */
 public class Data {
 	/**

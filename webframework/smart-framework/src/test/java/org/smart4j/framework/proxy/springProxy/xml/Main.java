@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 客户端
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-20
+ * @date 2017-08-20
  */
 public class Main {
 	public static void main(String[] args){
@@ -19,6 +19,7 @@ public class Main {
 		helloProxy.say("lugaoyu");
 		System.out.println("**************************");
 		helloProxy.sing();
+		@SuppressWarnings("rawtypes")
 		Class[] interfaces = {Hello.class};
 		boolean result = ProxyUtils.saveProxyTargerClass("E:\\proxyTargetClass\\ProxyInterceptor.class", "HelloImpl", interfaces);
 		System.out.println(result);

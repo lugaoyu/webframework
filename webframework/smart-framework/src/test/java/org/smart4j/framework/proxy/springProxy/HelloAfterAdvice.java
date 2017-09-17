@@ -8,7 +8,7 @@ import org.springframework.aop.AfterReturningAdvice;
  * Spring AOP 后置增强
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-19
+ * @date 2017-08-19
  */
 public class HelloAfterAdvice implements AfterReturningAdvice {
 

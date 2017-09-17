@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  * 为目标类生成一个代理类，且该代理类中有DynamicProxy类的引用，调用该引用的invoke方法即可实现增强
  * @author lugaoyu
  * @since 1.0.0
- * @data 2017-08-15
+ * @date 2017-08-15
  * 更新/该类就是一个增强类
  */
 public class DynamicProxy implements InvocationHandler {
