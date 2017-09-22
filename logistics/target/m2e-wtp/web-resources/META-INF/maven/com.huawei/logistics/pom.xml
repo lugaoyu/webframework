@@ -14,11 +14,14 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+<<<<<<< HEAD
     <dependency>
     	<groupId>org.smart4j</groupId>
     	<artifactId>smart-framework</artifactId>
     	<version>1.0.0</version>
     </dependency>
+=======
+>>>>>>> 9fa0cfa788c3d0143a788a9db51de3c630607687
   </dependencies>
   <build>
     <finalName>logistics</finalName>
