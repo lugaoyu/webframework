@@ -1,0 +1,90 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <!-- start 容器启动时,初始化父容器,父容器的配置中包含服务需要的中间件信息,比如数据源等信息 -->
+  <context-param>
+	  	<param-name>contextConfigLocation</param-name>
+	  	<param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <!-- end -->
+  
+  <!-- start 过滤器 -->
+  <filter>
+  		<filter-name>encodingFilter</filter-name>
+  		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  		<init-param>
+  			<param-name>encoding</param-name>
+  			<param-value>UTF-8</param-value>
+  		</init-param>
+  </filter>
+  <filter-mapping>
+  		<filter-name>encodingFilter</filter-name>
+  		<servlet-name>mvc</servlet-name>
+  </filter-mapping>
+  <!-- end -->
+  
+  
+  <!-- start 配置自己的监听器,容器启动时,可以在这里初始化必要信息,读取父容器配置文件信息,初始化 -->
+  <listener>
+  		<!--  <listener-class>com.lwx.framework.MyContextListener</listener-class> -->
+  		<!-- start springmvc实现的监听器  -->
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  		<!-- end springmvc实现的监听器  -->
+  </listener>
+  <!-- end -->
+  
+  <!-- start springmvc 实现的font-controller控制器 -->
+  <servlet>
+  		<servlet-name>mvc</servlet-name>
+  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  		<!-- start springmvc子容器,子容器里主要存放mvc的配置信息,如handlerMapping,handlerAdapter等信息 -->
+  		<!-- 读取子容器的配置信息,初始化子容器 -->
+  		<init-param>
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>/WEB-INF/mvc-servlet.xml</param-value>
+  		</init-param>
+  		<!-- end -->
+  </servlet>
+  
+  <!-- end -->
+  <!-- 访问页面的url映射路径信息 -->
+  <servlet-mapping>
+  	<servlet-name>mvc</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <!-- 访问页面的url映射路径信息 -->
+  
+  <!-- servlet 作为控制器 -->
+  <!-- 
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RequestDispatchServlet</servlet-name>
+  	<url-pattern>/RequestDispatchServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>com.lwx.controller.HelloServlet</servlet-class>
+  	<init-param>
+  		<param-name>HelloServlet-init-param</param-name>
+  		<param-value>HelloServlet-init-paramValue</param-value>
+  	</init-param>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>RequestDispatchServlet</servlet-name>
+  	<display-name>RequestDispatchServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.lwx.controller.RequestDispatchServlet</servlet-class>
+  </servlet>
+   -->
+   <!-- servlet 作为控制器 -->
+</web-app>
+
+
