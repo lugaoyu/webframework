@@ -1,6 +1,6 @@
-package com.huawei.daobean;
+package com.gaoyu.daobean;
 
-import com.huawei.restbean.CarrierRestBean;
+import com.gaoyu.restbean.CarrierRestBean;
 
 /**
  * 承运商

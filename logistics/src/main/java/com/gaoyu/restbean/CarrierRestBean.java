@@ -1,4 +1,4 @@
-package com.huawei.restbean;
+package com.gaoyu.restbean;
 
 import java.util.Date;
 

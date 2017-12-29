@@ -1,8 +1,8 @@
-package com.huawei.dao;
+package com.gaoyu.dao;
 
 import java.util.List;
 
-import com.huawei.daobean.CarrierDaoBean;
+import com.gaoyu.daobean.CarrierDaoBean;
 
 /**Droid Serif字体
  * 承运商数据库操作

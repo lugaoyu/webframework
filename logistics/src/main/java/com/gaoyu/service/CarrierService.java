@@ -1,12 +1,12 @@
-package com.huawei.service;
+package com.gaoyu.service;
 
 import java.util.List;
 
-import org.smart4j.framework.annotation.Autowired;
-import org.smart4j.framework.annotation.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.huawei.dao.CarrierDao;
-import com.huawei.daobean.CarrierDaoBean;
+import com.gaoyu.dao.CarrierDao;
+import com.gaoyu.daobean.CarrierDaoBean;
 
 /**
  * 承运商业务操作
