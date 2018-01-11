@@ -9,6 +9,7 @@ import com.gaoyu.restbean.CarrierRestBean;
  * @since 1.0.0
  * @date 2017-09-17
  */
-public class CarrierDaoBean extends  CarrierRestBean{
-	
+public class CarrierDaoBean extends CarrierRestBean
+{
+    
 }

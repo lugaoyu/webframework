@@ -17,7 +17,7 @@ import com.gaoyu.daobean.CarrierDaoBean;
  */
 @Service
 public class CarrierService {
-	@Autowired
+	
 	private CarrierDao carrierDao;
 	
 	public List<CarrierDaoBean> queryCarrierServiceList(){
