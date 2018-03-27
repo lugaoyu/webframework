@@ -30,6 +30,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RequestMapping
 {   
-        public String value();
+    public String value();
+    public String method();
 }
 
