@@ -1,12 +1,3 @@
-/**
- * Project Name:smart-springmvc
- * File Name:PropertiesUtils.java
- * Package Name:com.gaoyu.utils
- * Date:2018年3月27日 下午16:15:14
- * Copyright (c) 2018, chenzhou1025@126.com All Rights Reserved.
- *
-*/
-
 package com.gaoyu.helper;
 
 import java.util.HashSet;
@@ -46,7 +37,7 @@ public class ClassHelper
         Set<Class<?>> controllerClasses = new HashSet<Class<?>>();
         for(Class<?> cls : CLASS_SET)
         {
-            if(cls.getAnnotation(Controller.class) != null)
+            if(cls.isAnnotationPresent(Controller.class))
             {
                 controllerClasses.add(cls);
             }
@@ -59,7 +50,7 @@ public class ClassHelper
         Set<Class<?>> serviceClasses = new HashSet<Class<?>>();
         for(Class<?> cls : CLASS_SET)
         {
-            if(cls.getAnnotation(Service.class) != null)
+            if(cls.isAnnotationPresent(Service.class))
             {
                serviceClasses.add(cls); 
             }
@@ -72,7 +63,7 @@ public class ClassHelper
         Set<Class<?>> repositoryClasses = new HashSet<Class<?>>();
         for(Class<?> cls : CLASS_SET)
         {
-            if(cls.getAnnotation(Repository.class) != null)
+            if(cls.isAnnotationPresent(Repository.class))
             {
                 repositoryClasses.add(cls);
             }
