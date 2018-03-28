@@ -22,7 +22,7 @@ import com.gaoyu.bean.RequestBean;
  */
 public class ControllerHelper
 {
-    public static final Map<RequestBean, Handler> HANDLER_MAP = new HashMap<RequestBean, Handler>();
+    public static final Map<String, Handler> HANDLER_MAP = new HashMap<String, Handler>();
     
     static
     {
@@ -41,7 +41,7 @@ public class ControllerHelper
                             RequestMapping requestMapping = method.getAnnotation(RequestMapping.class);
                             String urlValue = requestMapping.value();
                             String requestMethod = requestMapping.method();
-                            RequestBean requestBean = new RequestBean(urlValue, requestMethod);
+                            String requestBean = urlValue+requestMethod;
                             Handler handler = new Handler(cls, method);
                             HANDLER_MAP.put(requestBean, handler);
                         }
@@ -51,7 +51,7 @@ public class ControllerHelper
         }
     }
     
-    public static Handler getHandler(RequestBean requestBean)
+    public static Handler getHandler(String requestBean)
     {
         return HANDLER_MAP.get(requestBean);
     }

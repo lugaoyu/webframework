@@ -15,6 +15,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
 /**控制层注解
  * ClassName:Controller <br/>
  * Function: TODO ADD FUNCTION. <br/>
@@ -30,6 +32,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)//运行期获取注解上信息
 public @interface Controller
 {
-        public String value();
 }
 

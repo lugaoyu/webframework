@@ -24,7 +24,7 @@ public class ClassHelper
     private static final Set<Class<?>> CLASS_SET;
     static
     {
-        CLASS_SET = ClassUtils.getClassSet("com.gao.yu");
+        CLASS_SET = ClassUtils.getClassSet("com.gaoyu");
     }
     
     public static Set<Class<?>> getClassSet()

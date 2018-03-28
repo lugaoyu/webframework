@@ -95,28 +95,49 @@ public class ClassUtils
             @Override
             public boolean accept(File file)
             {
-                return (file.isDirectory() || (file.isFile() && file.getName().endsWith(".class")));
+                System.out.println("****"+file.getName());
+                return file.isDirectory() || (file.isFile() && file.getName().endsWith(".class"));
             }
         });
         
-       for(File file : files)
-       {
-           String fileName = file.getName();
-           if(file.isFile())
-           {
-               String className = fileName.substring(0, fileName.lastIndexOf("."));
-               className = packageName + "." + className;
-               doAddClass(classSet,className);
-           }
-           else 
-           {
-               String subPackagePath = fileName;
-               subPackagePath = packagePath + "/" + subPackagePath;
-               packageName = packageName + "." + subPackagePath;
-               addClass(classSet, packageName, packagePath);
-           }
-           
-       }
+        if (files != null)
+        {
+            for (File file : files)
+            {
+                String fileName = file.getName();
+                System.out.println(fileName);
+                if (file.isFile())
+                {
+                    String className = fileName.substring(0, fileName.lastIndexOf("."));
+                    System.out.println(className);
+                    if (!packageName.isEmpty())
+                    {
+                        className = packageName + "." + className;
+                    }
+                    doAddClass(classSet, className);
+                }
+                else
+                {
+                    /*String subPackagePath = fileName;
+                    subPackagePath = packagePath + subPackagePath;
+                    packageName = packageName + "." + subPackagePath;
+                    addClass(classSet, packageName, packagePath);*/
+                    String subPackagePath = fileName;
+                    if (!subPackagePath.isEmpty())
+                    {
+                        subPackagePath = packagePath + subPackagePath;
+                    }
+                    String subPackageName = fileName;
+                    if (!packageName.isEmpty())
+                    {
+                        subPackageName = packageName + "." + subPackageName;
+                    }
+                    System.err.println(subPackageName);
+                    System.err.println(subPackagePath);
+                    addClass(classSet, subPackageName,subPackagePath);
+                }
+            }
+        }
     }
 
     private static void doAddClass(Set<Class<?>> classSet, String className)

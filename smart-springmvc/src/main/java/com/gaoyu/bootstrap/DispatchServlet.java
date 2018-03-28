@@ -38,9 +38,9 @@ public class DispatchServlet extends HttpServlet
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String requestPath = request.getPathInfo();
+        String requestPath = request.getServletPath();
         String requestMethod = request.getMethod().toLowerCase();
-        RequestBean requestBean = new RequestBean(requestPath,requestMethod);
+        String requestBean = requestPath+requestMethod;
         Handler handler = ControllerHelper.getHandler(requestBean);
         parameterNames = request.getParameterNames();
         Map<String, Object> paramMap = new HashMap<String, Object>();
