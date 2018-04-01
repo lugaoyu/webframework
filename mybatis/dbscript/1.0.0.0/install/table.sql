@@ -16,6 +16,11 @@ Date: 2018-03-30 16:42:27
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
+-- create database
+-- ----------------------------
+CREATE DATABASE mybatis DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+-- ----------------------------
 -- Table structure for country
 -- ----------------------------
 DROP TABLE IF EXISTS `country`;
