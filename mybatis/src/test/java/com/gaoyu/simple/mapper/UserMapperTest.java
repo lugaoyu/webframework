@@ -226,7 +226,30 @@ public class UserMapperTest extends BaseMapperTest
         {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             List<SysRole> list = userMapper.selectRolesByUserIdAndRoleEnabled(1L, 1);
-            list.forEach(sysrole -> System.out.println(sysrole.getId()+":"+sysrole.getCreate_by()+sysrole.getCreate_time().toString()));
+            list.forEach(sysrole -> System.out.println(sysrole.getId()+":"+sysrole.getCreateBy()+sysrole.getCreateTime().toString()));
+            Assert.assertNotNull(list);
+            Assert.assertTrue(list.size() > 0);
+        }
+        finally
+        {
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+    
+    @Test
+    public void selectRolesByUserAndRole()
+    {
+        SqlSession sqlSession = getSqlSession();
+        try
+        {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser sysUser = new SysUser();
+            sysUser.setId(1L);
+            SysRole sysRole = new SysRole();
+            sysRole.setEnabled(1);
+            List<SysRole> list = userMapper.selectRolesByUserAndRole(sysUser, sysRole);
+            list.forEach(sysrole -> System.out.println(sysrole.getId()+":::"+sysrole.getCreateBy()+sysrole.getCreateTime().toString()));
             Assert.assertNotNull(list);
             Assert.assertTrue(list.size() > 0);
         }

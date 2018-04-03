@@ -18,8 +18,8 @@ public class SysRole
     private Long id;
     private String roleName;
     private Integer enabled;
-    private Long create_by;
-    private Date create_time;
+    private Long createBy;
+    private Date createTime;
     private SysUser user;
     public Long getId()
     {
@@ -45,22 +45,6 @@ public class SysRole
     {
         this.enabled = enabled;
     }
-    public Long getCreate_by()
-    {
-        return create_by;
-    }
-    public void setCreate_by(Long create_by)
-    {
-        this.create_by = create_by;
-    }
-    public Date getCreate_time()
-    {
-        return create_time;
-    }
-    public void setCreate_time(Date create_time)
-    {
-        this.create_time = create_time;
-    }
     public SysUser getUser()
     {
         return user;
@@ -68,5 +52,21 @@ public class SysRole
     public void setUser(SysUser user)
     {
         this.user = user;
+    }
+    public Long getCreateBy()
+    {
+        return createBy;
+    }
+    public void setCreateBy(Long createBy)
+    {
+        this.createBy = createBy;
+    }
+    public Date getCreateTime()
+    {
+        return createTime;
+    }
+    public void setCreateTime(Date createTime)
+    {
+        this.createTime = createTime;
     }
 }
