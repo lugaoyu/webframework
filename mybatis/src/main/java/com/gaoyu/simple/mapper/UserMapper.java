@@ -2,6 +2,8 @@ package com.gaoyu.simple.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.gaoyu.simple.model.SysRole;
 import com.gaoyu.simple.model.SysUser;
 
@@ -50,4 +52,46 @@ public interface UserMapper
      * @return
      */
     List<SysRole> selectRolesByUserId2(Long id);
+    
+    /**
+     * 
+     * @param sysUser
+     */
+    int insert(SysUser sysUser);
+    
+    /**
+     * 获取自增长主键id
+     * @param sysUser
+     * @return 受影响的行数
+     */
+    int insert2(SysUser sysUser);
+    
+    /**
+     * 
+     * @param sysUser
+     * @return
+     */
+    int insert3(SysUser sysUser);
+    
+    /**
+     * 
+     * @param sysUser
+     * @return
+     */
+    int updateById(SysUser sysUser);
+    
+    /**
+     * 
+     * @param sysUser
+     * @return
+     */
+    int deleteById(SysUser sysUser);
+    
+    /**
+     * 
+     * @param userId
+     * @param enabled
+     * @return
+     */
+    List<SysRole> selectRolesByUserIdAndRoleEnabled(@Param("userId")Long userId,@Param("enabled")Integer enabled);
 }
