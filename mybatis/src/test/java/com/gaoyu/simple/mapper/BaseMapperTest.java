@@ -28,7 +28,7 @@ public class BaseMapperTest
         }
     }
     
-    public SqlSession getSqlSession()
+    public static SqlSession getSqlSession()
     {
         return sqlSessionFactory.openSession();
     }

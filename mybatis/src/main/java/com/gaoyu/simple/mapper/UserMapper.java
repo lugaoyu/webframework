@@ -110,4 +110,8 @@ public interface UserMapper
      * @since JDK 1.7
      */
     List<SysRole> selectRolesByUserAndRole(@Param("user")SysUser user,@Param("role")SysRole role);
+    
+    List<SysUser> selectByUser(SysUser sysUser);
+    
+    int updateByIdSelective(SysUser sysUser);
 }

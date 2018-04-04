@@ -259,4 +259,55 @@ public class UserMapperTest extends BaseMapperTest
             sqlSession.close();
         }
     }
+    
+    @Test
+    public void selectByUser()
+    {
+        SqlSession sqlSession = getSqlSession();
+        try
+        {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser sysUser = new SysUser();
+            sysUser.setUserName("a");
+            List<SysUser> list = userMapper.selectByUser(sysUser);
+            Assert.assertEquals(1, list.size());
+            
+            sysUser = new SysUser();
+            sysUser.setUserEmail("admin@mybatis.tk");
+            list = userMapper.selectByUser(sysUser);
+            Assert.assertEquals(1, list.size());
+            
+            sysUser = new SysUser();
+            sysUser.setUserName("a");
+            sysUser.setUserEmail("admin@mybatis.tk");
+            list = userMapper.selectByUser(sysUser);
+            Assert.assertEquals(1, list.size());
+        }
+        finally
+        {
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+    
+    @Test
+    public void updateByIdSelective()
+    {
+        SqlSession sqlSession = getSqlSession();
+        try
+        {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser sysUser = new SysUser();
+            sysUser.setId(1L);
+            sysUser.setCreateTime(new Date());
+            sysUser.setUserEmail("lugaoyu@huawei.com");
+            int result = userMapper.updateByIdSelective(sysUser);
+            Assert.assertEquals(1, result);
+        }
+        finally
+        {
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
 }
