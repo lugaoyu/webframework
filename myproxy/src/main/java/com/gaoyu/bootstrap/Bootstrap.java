@@ -27,5 +27,11 @@ public class Bootstrap
         UserMgr userMgrImplTrue = new UserMgrImpl();
         System.out.println("userMgrImplTrue: "+userMgrImplTrue.getClass());
         userMgrImplTrue.addUser();
+        System.out.println("另外一个接口代理...");
+        myHandler = new MyHandler(new OrderMgrImpl(),new ValidateImpl());
+        OrderMgr orderMgrImpl = (OrderMgr)myHandler.getInstance();
+        System.err.println(orderMgrImpl.getClass());
+        orderMgrImpl.subscrible();
+        orderMgrImpl.unSubscrible();
     }
 }
