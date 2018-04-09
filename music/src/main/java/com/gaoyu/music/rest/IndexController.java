@@ -12,8 +12,10 @@ public class IndexController
     @RequestMapping(value={"","/index"})
     public ModelAndView dicts()
     {
+        System.out.println("IndexController begin...");
         ModelAndView mv = new ModelAndView("index");
         mv.addObject("now", new Date());
+        System.out.println("IndexController end...");
         return mv;
     }
 }   

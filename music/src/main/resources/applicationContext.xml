@@ -17,6 +17,18 @@
         	<property name="password" value="health_hw"/>
         </bean>
         
+        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        	<property name="configLocation" value="classpath:mybatis-config.xml"/>
+        	<property name="dataSource" ref="dataSource"/>
+        	<property name="mapperLocations">
+        		<array>
+        			<value>classpath:com/gaoyu/**/mapper/*.xml</value>
+        		</array>
+        	</property>
+        	<property name="typeAliasesPackage" value="com.gaoyu.music.model"/>
+        </bean>
         
-        
+        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        	<property name="basePackage" value="com.gaoyu.**.mapper"/>
+        </bean>
         </beans>
