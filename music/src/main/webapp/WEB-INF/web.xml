@@ -2,6 +2,61 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+<!-- 扫描@controller注解类的对象是在springmvc容器中。而扫描@service、@component、@Repository等注解类的对象都是在spring容器中 -->
+<!-- ContextLoaderListener监听器是装载Spring框架本身的bean上下文（如Service和DAO层等），DispatcherServlet是装载SpringMVC的上下文 -->
+<!-- Spring容器（上下文）创建完成之后，当初始化springMVC容器的时候，就会将之前初始化的Spring容器设置为它的父容器。-->
+<!-- 如果项目中没有初始化Spring父容器，springMVC也会初始化一个默认的父容器。 -->
+<!-- Spring容器    父容器 -->	
+<!-- SpringMVC容器   子容器  -->
+<!-- 父子容器的关系：1、子容器能够访问父容器的资源（bean） a)示例：Controller可以注入Service 2、父容器不能访问子容器的资源（bean）  -->
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  
+  <filter>
+  		<filter-name>SpringEncodingFilter</filter-name>
+  		<filter-class>
+  			org.springframework.web.filter.CharacterEncodingFilter
+  		</filter-class>
+  		<init-param>
+  			<param-name>encoding</param-name>
+  			<param-value>UTF-8</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>forceEncoding</param-name>
+  			<param-value>true</param-value>
+  		</init-param>
+  </filter>
+  <filter-mapping>
+  		<filter-name>SpringEncodingFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 启动spring容器 -->
+  <listener>
+ 		<listener-class>
+ 			org.springframework.web.context.ContextLoaderListener
+ 		</listener-class> 
+  </listener>
+  <!-- spring mvc -->
+  <servlet>
+  		<servlet-name>music</servlet-name>
+  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  		<init-param>
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>classpath:music-servlet.xml</param-value>
+  		</init-param>
+  		 <!-- 1容器启动时初始化该servlet, 0第一次访问的时候初始化该servlet -->
+  		<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>music</servlet-name>
+  		<url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>
+
+
