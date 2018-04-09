@@ -3,14 +3,15 @@ package com.gaoyu.bootstrap;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Date;
 
 public class MyHandler implements InvocationHandler
 {
     private Object target;
-    public MyHandler(Object target)
+    private Validate validate;
+    public MyHandler(Object target,Validate validate)
     {
         this.target = target;
+        this.validate = validate;
     }
     
     public Object getInstance()
@@ -21,9 +22,9 @@ public class MyHandler implements InvocationHandler
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable
     {
-        System.err.println("执行开始时间: "+ new Date());
+        validate.validateParam();
         Object result = method.invoke(target, args);
-        System.err.println("执行结束时间: "+ new Date());
+        validate.returnResult();
         return result;
     }
 }
