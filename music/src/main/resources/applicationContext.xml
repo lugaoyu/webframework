@@ -25,10 +25,10 @@
         			<value>classpath:com/gaoyu/**/mapper/*.xml</value>
         		</array>
         	</property>
-        	<property name="typeAliasesPackage" value="com.gaoyu.music.model"/>
+        	<property name="typeAliasesPackage" value="com.gaoyu.music.daobean"/>
         </bean>
         
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        	<property name="basePackage" value="com.gaoyu.**.mapper"/>
+        	<property name="basePackage" value="com.gaoyu.**.dao"/>
         </bean>
         </beans>
