@@ -29,10 +29,10 @@ public class DictController
         return modelAndView;
     }
     
-    @RequestMapping(value="add", method=RequestMethod.POST)
+    @RequestMapping(value="add", method=RequestMethod.GET)
     public ModelAndView add(Long id)
     {
-        ModelAndView modelAndView = new ModelAndView("dict_add");
+        ModelAndView modelAndView = new ModelAndView("dicts_add");
         SysDict sysDict;
         if(id == null)
         {
@@ -57,7 +57,7 @@ public class DictController
         }
         catch (Exception e)
         {
-            modelAndView.setViewName("dict_add");
+            modelAndView.setViewName("dicts_add");
             modelAndView.addObject("msg",e.getMessage());
             modelAndView.addObject("model", sysDict);
         }

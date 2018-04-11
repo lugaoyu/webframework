@@ -34,7 +34,7 @@ public class DictService
     
     public boolean saveOrUpdate(SysDict sysDict)
     {
-        if(sysDict.getId() != null)
+        if(sysDict.getId() == null)
         {
             return dictDao.insert(sysDict) == 1;
         }
