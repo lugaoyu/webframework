@@ -7,12 +7,9 @@
 <html>
 <head>
 <c:set var="path" value="${pageContext.request.contextPath }"/>
-<%
-	System.out.println(pageContext.getServletContext().getContextPath());
-%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Index</title>
-<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 	<table>
@@ -26,19 +23,20 @@
 			<th>操作[<a href="${path}/dicts/add">新增</a>]</th>
 		</tr>
 		<c:forEach items="${dicts}" var="dict">
-			<tr id="dict-${dict.id}">
+			<tr id="${dict.id}">
 			<td>${dict.code}</td>
 			<td>${dict.name}</td>
 			<td>${dict.value}</td>
 			<td>
 				[<a href="${path}/dicts/add?id=${dict.id}">编辑</a>]
-				[<a href="javascript:;" onclick="deleteById(${dict.id},'${dict.name }')">删除</a>]
+				[<a href="javascript:;" onclick="deleteById('${dict.id}','${dict.name }')">删除</a>]
 			</td>
+			</tr>
 		</c:forEach>
 	</table>
 	<script type="text/javascript">
 		function deleteById(id,lable){
-			var r = confirm('确定要删除"'+label+'"吗?');
+			var r = confirm('确定要删除"'+lable+'"吗?');
 			if(r){
 				$.ajax({
 					url : '${path}/dicts/delete',
@@ -49,7 +47,8 @@
 					type : 'POST',
 					success : function(data){
 						if(data.success){
-							$('#dict-'+id).remove();
+							$('#'+id).remove();
+							alert('删除成功')
 						}else{
 							alert(data.msg);
 						}

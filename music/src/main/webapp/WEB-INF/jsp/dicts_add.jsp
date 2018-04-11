@@ -12,7 +12,7 @@
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>字典维护</title>
-<script src="../../assets/js/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 	<form action="#{path}/dicts/add" method="post">
