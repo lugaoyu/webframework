@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+.clearfix {clear: both;}
+.f-header{
+	width: 100%;
+	height: 80px;
+	background-color: #E6E6E6;	
+}
+.f-header-box{
+	width: 1200px;
+	max-width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.logo{
+	width: 128px;
+	height: 100%;
+	background: url('../i/logo.png') no-repeat no-repeat 50% 50%;
+	background-size: auto 63px;
+	float: left;
+}
+.header-nav{
+	width: auto;
+	height: 34px;
+	margin-top: 30px;
+	float: left;
+}
+.header-nav-item{
+	float: left;
+	width: 67px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 16px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color:#000;
+}
+.header-login-btn{
+	border-radius:4px;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #0089D2;
+	margin:0 auto;
+	text-align: center;
+	color: #FFF;
+	cursor: point;
+	font-size: 18px;
+}
+.f-main{
+	width: 1200px;
+	min-height: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-buttom: 100px;
+}
+.main-category{
+	width: 1200px;
+	height:450px;
+}
+.main-bg{
+	position: absolute;
+	width: 1200px;
+	height: 450px;
+	z-index: 1;
+	float:left;
+}
+.main-bg-item{
+	position: absolute;
+	top: 0;
+	width: 1200px;
+	height: 450px;
+	z-index: 1;
+}
+.bg-nav a{
+	width: 12px;
+	height: 12px;
+	border: 2px #929DA5 solid;
+	border-radius: 50%;
+	cursor: pointer;
+	float:left;
+	margin-left: 10px;
+}
+.bg-nav a.cur{
+	width: 12px;
+	height: 12px;
+	background-color: #929DA5;
+	border: none;
+}
+ 
