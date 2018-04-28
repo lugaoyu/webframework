@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        <bean id="helloWorldImpl1" class="org.smart.proxy.xml.HelloWorldImpl1"/>
+        <bean id="helloWorldImpl2" class="org.smart.proxy.xml.HelloWorldImpl2"/>
+        <bean id="timeHandler" class="org.smart.proxy.xml.TimeHandler"/>
+        <bean id="logHandler"  class="org.smart.proxy.xml.LogHandler"/>
+         
+        <aop:config>
+        	<aop:aspect id="time" ref="timeHandler" order="1"> <!-- 切面类 -->
+        		<!-- 切点 -->
+        		<aop:pointcut  id="addtime" expression="execution(* org.smart.proxy.xml.HelloWorld.print*(..))" /> 
+        		<!-- 前置增强 -->
+        		<aop:before method="printTime" pointcut-ref="addtime"/>
+        		<!-- 后置增强 -->
+        		<aop:after method="printTime" pointcut-ref="addtime"/>
+        	</aop:aspect>
+        	
+        	<aop:aspect id="log" ref="logHandler" order="2">
+        		<aop:pointcut expression="execution(* org.smart.proxy.xml.HelloWorld.do*(..))" id="addlog"/>
+        		<aop:before method="logBefore" pointcut-ref="addlog"/>
+        		<aop:after method="logAfter" pointcut-ref="addlog"/>
+        	</aop:aspect>
+        </aop:config>
+        </beans>
