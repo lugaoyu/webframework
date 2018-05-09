@@ -6,7 +6,7 @@
  * @author lugaoyu
  * @since 1.0.0
  * @date 2017-07-31
- * 测试git1
+ * 测试git2密码设置
  */
 public interface ConfigConstant {
 	String CONFIG_FILE = "smart.properties";
