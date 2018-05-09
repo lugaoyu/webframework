@@ -1,4 +1,4 @@
-package org.smart4j.framework;
+﻿package org.smart4j.framework;
 
 /**
  * 提供相关配置项常量
@@ -6,6 +6,7 @@ package org.smart4j.framework;
  * @author lugaoyu
  * @since 1.0.0
  * @date 2017-07-31
+ * 测试git
  */
 public interface ConfigConstant {
 	String CONFIG_FILE = "smart.properties";
